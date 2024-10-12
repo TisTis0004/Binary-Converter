@@ -1,0 +1,117 @@
+body {
+    font-family: "Pixelify Sans";
+    background-color: #3a3a3a;
+    margin: 0;
+}
+*::selection {
+    background-color: #fff;
+}
+h1 {
+    text-align: center;
+    font-size: 4.5rem;
+    margin:0;
+    margin-bottom: 4rem;
+    color: #10bb00;
+}
+div {
+    color: #10bb00;
+}
+.decimal-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.D-to-B,
+.B-to-D,
+.S-to-B {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    min-height: 300px;
+    background-color: #2a2b2e;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+.box {
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+span {
+    margin-bottom: 100px;
+}
+.input-box {
+    display: flex;
+    margin-top: 2rem;
+}
+.input-box svg {
+    transition: color 0.3s 0s ease;
+    color: #000;
+}
+.input-box svg:hover {
+    color: #ff0000;
+    cursor: pointer;
+}
+input[type="text"] {
+    font-size: 1.5rem;
+    caret-color: #10bb00;
+    background-color: #3a3a3a;
+    border: 2px solid black;
+    padding: 0.5rem;
+    color: #10bb00;
+}
+
+input[type="text"]::placeholder {
+    background-color: #3a3a3a;
+}
+input[type="button"] {
+    font-family: "Pixelify Sans";
+    font-size: 1.1rem;
+    border: none;
+    border: 2px solid black;
+    transition: all 0.3s 0s ease;
+}
+input[type="button"]:hover {
+    background-color: #10bb00;
+    color: #fff;
+    cursor: pointer;
+}
+textarea {
+    margin-top: 2rem;
+    border: 2px solid black;
+    background-color: #3a3a3a;
+    color: #10bb00;
+    resize: vertical;
+}
+textarea:hover {
+    cursor: text;
+}
+.string-box {
+    display: flex;
+    justify-content: center;
+}
+.S-to-B {
+    width: 1000px;
+    margin-top: 2rem;
+}
+.S-to-B textarea{
+    margin-left: 3rem;
+}
+.note {
+    font-size: 1rem;
+    margin: 0;
+}
+footer {
+    color: white;
+    width: 100%;
+    background-color: black;
+    margin-top: 2rem;
+    height: 3rem;
+}
+footer h3 {
+    text-align: center;
+    padding-top: 0.5rem;
+}
+footer h3::selection{
+    background-color: #10bb00;
+}
