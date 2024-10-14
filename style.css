@@ -35,9 +35,6 @@ div {
     flex-wrap: wrap;
     padding-bottom: 2rem;
 }
-.B-to-S {
-    margin-bottom:2rem;
-}
 .box {
     font-size: 2rem;
     padding-top: 1rem;
@@ -164,6 +161,9 @@ textarea:hover {
     }
     #stringOutput{
         margin-top: -15px;
+    }
+    .B-to-S textarea {
+        margin-left: 0;
     }
     .S-to-B,
     .B-to-S{
