@@ -85,3 +85,18 @@ bConvert.addEventListener('click',()=>{
 sConvert.addEventListener('click',()=>{
     sOutput.innerHTML = stringToBinary(sInput.value);
 })
+dInput.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        dConvert.click();
+    }
+})
+bInput.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        bConvert.click();
+    }
+})
+sInput.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        sConvert.click();
+    }
+})
