@@ -2,6 +2,7 @@ body {
     font-family: "Pixelify Sans";
     background-color: #3a3a3a;
     margin: 0;
+    height: 100%;
 }
 *::selection {
     background-color: #fff;
@@ -23,7 +24,8 @@ div {
 }
 .D-to-B,
 .B-to-D,
-.S-to-B {
+.S-to-B,
+.B-to-S {
     display: flex;
     justify-content: center;
     width: 500px;
@@ -90,28 +92,96 @@ textarea:hover {
     display: flex;
     justify-content: center;
 }
-.S-to-B {
+.S-to-B,
+.B-to-S {
     width: 1000px;
     margin-top: 2rem;
 }
 .S-to-B textarea{
     margin-left: 3rem;
 }
+.B-to-S textarea{
+    margin-left: 3rem;
+}
 .note {
     font-size: 1rem;
     margin: 0;
 }
-footer {
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: white;
     width: 100%;
     background-color: black;
-    margin-top: 2rem;
     height: 3rem;
 }
-footer h3 {
+
+.footer h3 {
     text-align: center;
     padding-top: 0.5rem;
 }
-footer h3::selection{
+.footer h3::selection{
     background-color: #10bb00;
+}
+
+@media (max-width: 1000px) {
+    .D-to-B {
+        margin-bottom: 3rem;
+    }
+}
+@media (max-width: 635px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    #stringOutput{
+        margin-left: 0;
+    }
+    .S-to-B,
+    .B-to-S{
+        max-width: 500px;
+        max-height: 100px;
+    }
+    .box{
+        font-size: 1.3rem;
+    }
+    input[type="text"]{
+        font-size: 1rem;
+    }
+    input[type="button"]{
+        font-size: 0.7rem;
+    }
+    .note{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 490px) {
+    h1 {
+        font-size: 2rem;
+    }
+    #stringOutput{
+        margin-top: -15px;
+    }
+    .S-to-B,
+    .B-to-S{
+        max-width: 500px;
+    }
+    .box{
+        font-size: 1rem;
+    }
+    input[type="text"]{
+        font-size: 0.8rem;
+    }
+    input[type="button"]{
+        font-size: 0.7rem;
+    }
+    .note{
+        font-size: 0.4rem;
+    }
+    .decimal-box,.string-box {
+        margin:0px 20px;
+    }
+    h3{
+        font-size: 0.8rem;
+    }
 }
