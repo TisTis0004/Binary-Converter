@@ -1,14 +1,20 @@
 function binaryToDecimal(binary){
     for(let i = 0 ; i < binary.length ; i++){
-        if(binary[i] != '0' && binary[i] != '1'){
+        if(binary[i] != '0' && binary[i] != '1' && binary[i] != " "){
             return "The value you entered is not in binary."
         }
     }
-    let cnt = binary.length, sum = 0;
-    for(let i = 0 ; i < cnt ; i++){
-        sum += Math.pow(2,i) * parseInt(binary[cnt - 1 - i]);
+    binary = binary.split(' ');
+    let numbers = [];
+    for(let j = 0 ; j < binary.length ; j++){
+        let cnt = binary[j].length, sum = 0;
+        for(let i = 0 ; i < cnt ; i++){
+            sum += Math.pow(2,i) * parseInt(binary[j][cnt - 1 - i]);
+        }
+        numbers.push(sum);
     }
-    return sum;
+    let s = numbers.join(' ');
+    return s;
 }
 
 
