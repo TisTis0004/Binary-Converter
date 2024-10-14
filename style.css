@@ -35,6 +35,9 @@ div {
     flex-wrap: wrap;
     padding-bottom: 2rem;
 }
+.B-to-S {
+    margin-bottom:2rem;
+}
 .box {
     font-size: 2rem;
     padding-top: 1rem;
