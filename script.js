@@ -34,8 +34,12 @@ function decimalToBinary(decimal){
         }
         s = s.concat(decimal[i] % 2) + ' ';
     }
-    s = s.split('').reverse().join('');
-    return s.slice(1,s.length - 1);
+    s = s.split(' ');
+    for(let i = 0 ; i < s.length ; i++){
+        s[i] = s[i].split('').reverse().join('');
+    }
+    console.log(s)
+    return (s.join(' ')).slice(0,length-1);
 }
 
 
@@ -43,12 +47,13 @@ function stringToBinary(string){
     let letters = string.split('');
     for(let i = 0 ; i < letters.length ; i++){
         letters[i] = letters[i].charCodeAt(0);
-        letters[i] = decimalToBinary(letters[i]);
+        // letters[i] = decimalToBinary(letters[i]);
         while(letters[i].length < 8){
             letters[i] = '0' + letters[i];
         }
     }
-    let s = letters.join(' ');
+    console.log(letters)
+    let s = decimalToBinary(letters.join(' '));
     return s;
 }
 
