@@ -18,18 +18,18 @@ function decimalToBinary(decimal){
             return "The value you entered is not in decimal."
         }
     }
+    decimal = decimal.split(' ');
     let s = "";
-    while(Math.floor(decimal / 2) != 0){
-        let mod = decimal % 2;
-        s = s.concat(mod);
-        decimal = Math.floor(decimal / 2)
+    for(let i = 0 ; i < decimal.length; i++){
+        while(Math.floor(decimal[i] / 2) != 0){
+            let mod = decimal[i] % 2;
+            s = s.concat(mod);
+            decimal[i] = Math.floor(decimal[i] / 2)
+        }
+        s = s.concat(decimal[i] % 2) + ' ';
     }
-    s = s.concat(decimal % 2);
     s = s.split('').reverse().join('');
-    while(s.length < 8){
-        s = '0' + s;
-    }
-    return s;
+    return s.slice(1,s.length - 1);
 }
 
 
@@ -47,24 +47,46 @@ function stringToBinary(string){
 }
 
 
+function binaryToString(binary){
+    for(let i = 0 ; i < binary.length ; i++){
+        if(binary[i] != 0 && binary[i] != 1){
+            return "The value you entered is not in binary.";
+        }
+    }
+    const letters = binary.split(' ');
+    let txt = "";
+    for(let i = 0 ; i < letters.length ; i++){
+        txt += String.fromCharCode(binaryToDecimal(letters[i]));
+    }
+    console.log(letters);
+    return txt;
+}
+
+
+
 function clearText(box){
     box.value = "";
 }
 const dClear = document.getElementById("decimalClear");
 const bClear = document.getElementById("binaryClear");
 const sClear = document.getElementById("stringClear");
+const bsClear = document.getElementById("binaryStringClear");
+
 
 const dInput = document.getElementById("decimalInput");
 const bInput = document.getElementById("binaryInput");
 const sInput = document.getElementById("stringInput");
+const bsInput = document.getElementById("binaryStringInput");
 
 const dOutput = document.getElementById("decimalOutput");
 const bOutput = document.getElementById("binaryOutput");
 const sOutput = document.getElementById("stringOutput");
+const bsOutput = document.getElementById("binaryStringOutput");
 
 const dConvert = document.getElementById("decimalConvert");
 const bConvert = document.getElementById("binaryConvert");
 const sConvert = document.getElementById("stringConvert");
+const bsConvert = document.getElementById("binaryStringConvert");
 
 dClear.addEventListener('click',()=>{
     clearText(dInput);
@@ -74,6 +96,9 @@ bClear.addEventListener('click',()=>{
 });
 sClear.addEventListener('click',()=>{
     clearText(sInput);
+});
+bsClear.addEventListener('click',()=>{
+    clearText(bsInput);
 });
 
 dConvert.addEventListener('click',()=>{
@@ -85,6 +110,10 @@ bConvert.addEventListener('click',()=>{
 sConvert.addEventListener('click',()=>{
     sOutput.innerHTML = stringToBinary(sInput.value);
 })
+bsConvert.addEventListener('click',()=>{
+    bsOutput.innerHTML = binaryToString(bsInput.value);
+})
+
 dInput.addEventListener("keydown", function(event){
     if(event.key === "Enter"){
         dConvert.click();
@@ -98,5 +127,10 @@ bInput.addEventListener("keydown", function(event){
 sInput.addEventListener("keydown", function(event){
     if(event.key === "Enter"){
         sConvert.click();
+    }
+})
+bsInput.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        bsConvert.click();
     }
 })
